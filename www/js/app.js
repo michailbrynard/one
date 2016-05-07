@@ -20,7 +20,7 @@ angular.module('starter', [
 ])
 
   //.constant('API', 'http://onepi.cf/api')
-  .constant('API', 'http://127.0.0.1:8000/api')
+  .constant('API', 'http://app.onesnap.xyz/api')
   .constant('REFRESH_INTERVAL', 3000)
 
   .config(function ($httpProvider, $ionicConfigProvider) {

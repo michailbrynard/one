@@ -6,19 +6,22 @@ install:
 	cordova plugin add cordova-plugin-whitelist
 	cordova plugin add cordova-plugin-statusbar
 
+run:
+	gulp sass
+
 add-android:
 	ionic platform add android
 
 add-ios:
 	ionic platform add ios
 
-ios:
+ios: run
 	ionic build ios
 
 ios-run: ios
 	ionic emulate ios
 
-android:
+android: run
 	ionic build android
 
 android-run: android
