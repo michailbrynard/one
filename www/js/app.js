@@ -5,7 +5,32 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', [
+  'ionic',
+    'angularMoment',
+    'ngCordova',
+    'ngFileUpload',
+    'starter.controllers.account',
+    'starter.controllers.camera',
+    'starter.controllers.dashboard',
+    'starter.controllers.friends',
+    'starter.services.account',
+    'starter.services.camera',
+    'starter.services.dashboard',
+    'starter.services.friends'
+])
+
+  //.constant('API', 'http://onepi.cf/api')
+  .constant('API', 'http://127.0.0.1:8000/api')
+  .constant('REFRESH_INTERVAL', 3000)
+
+  .config(function ($httpProvider, $ionicConfigProvider) {
+    'use strict';
+    //Switch off caching:
+    $ionicConfigProvider.views.maxCache(0);
+    //Insert JWT token into all api requests:
+    $httpProvider.interceptors.push('authInterceptor');
+  })
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -19,67 +44,120 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+      StatusBar.overlaysWebView(true);
+      StatusBar.show();
     }
   });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-  $stateProvider
+        $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
+            // State to represent Login View
+            .state('login', {
+                url: '/login',
+                templateUrl: 'templates/login.html',
+                controller: 'LoginCtrl'
 
-  // Each tab has its own nav history stack:
+            })
 
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
+            // setup an abstract state for the tabs directive
+            .state('tab', {
+                url: '/tab',
+                abstract: true,
+                templateUrl: 'templates/tabs.html',
+                cache: false
+            })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+            .state('tab.camera', {
+                url: '/camera',
+                views: {
+                    'tab-camera': {
+                        templateUrl: 'templates/camera.html',
+                        controller: 'CameraCtrl'
+                    }
+                }
+            })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
+            .state('tab.dashboard', {
+                url: '/dash',
+                views: {
+                    'tab-dash': {
+                        templateUrl: 'templates/dashboard.html',
+                        controller: 'MyPhotosCtrl'
+                    }
+                }
+            })
+
+            .state('tab.friend', {
+                url: '/friend',
+                views: {
+                    'tab-friend': {
+                        templateUrl: 'templates/friend.html',
+                        controller: 'FriendListingCtrl'
+                    }
+                }
+            })
+
+            .state('tab.friendView', {
+                url: '/friend/view',
+                views: {
+                    'tab-friend': {
+                        templateUrl: 'templates/friend_view.html',
+                        controller: 'FriendViewCtrl'
+                    }
+                },
+                params: {
+                    friendId: null
+                }
+            })
+
+            .state('tab.account', {
+                url: '/account',
+                views: {
+                    'tab-account': {
+                        templateUrl: 'templates/account.html',
+                        controller: 'AccountViewCtrl'
+                    }
+                }
+            });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/camera');
 
 });
+
+angular.module('ion-fab-button', [])
+  .directive('fabButton', function fabButtonDirective() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      template: template,
+      link: link
+    };
+    //isAnchor
+    function isAnchor(attr) {
+      return angular.isDefined(attr.href) || angular.isDefined(attr.ngHref);
+    }
+    //template
+    function template(element, attr) {
+      return isAnchor(attr) ?
+        '<a class="fab-button" ng-transclude></a>' :
+        '<button class="fab-button" ng-transclude></button>';
+    }
+    //link
+    function link(scope, element, attr) {
+      var target = '#' + attr['targetId'];
+      //var bgColor = attr['bg-color'];
+      //element.style=bgColor;
+      var targetEl = angular.element(document.querySelector(target));
+      var savePos = 0;
+      targetEl.bind('scroll', function (e) {
+      });
+    }
+  });
