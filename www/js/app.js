@@ -8,7 +8,7 @@ angular.module('one', [
   'ngCordova',
   'ngFileUpload',
   'one.controllers.account',
-  'one.controllers.camera',
+  'one.controllers.home',
   'one.controllers.dashboard',
   'one.controllers.friends',
   'one.services.account',
@@ -27,6 +27,7 @@ angular.module('one', [
     $ionicConfigProvider.views.maxCache(0);
     //Insert JWT token into all api requests:
     // $httpProvider.interceptors.push('authInterceptor');
+    $ionicConfigProvider.tabs.position('bottom'); // other values: top
   })
 
 .run(function($ionicPlatform) {
