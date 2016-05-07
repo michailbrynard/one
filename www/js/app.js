@@ -1,22 +1,20 @@
-// Ionic Starter App
+// Ionic One App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'one' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', [
+angular.module('one', [
   'ionic',
   'ngCordova',
   'ngFileUpload',
-  'starter.controllers.account',
-  'starter.controllers.camera',
-  'starter.controllers.dashboard',
-  'starter.controllers.friends',
-  'starter.services.account',
-  'starter.services.camera',
-  'starter.services.dashboard',
-  'starter.services.friends'
+  'one.controllers.account',
+  'one.controllers.camera',
+  'one.controllers.dashboard',
+  'one.controllers.friends',
+  'one.services.account',
+  'one.services.camera',
+  'one.services.dashboard',
+  'one.services.friends'
 ])
 
   //.constant('API', 'http://onepi.cf/api')
@@ -28,7 +26,7 @@ angular.module('starter', [
     //Switch off caching:
     $ionicConfigProvider.views.maxCache(0);
     //Insert JWT token into all api requests:
-    $httpProvider.interceptors.push('authInterceptor');
+    // $httpProvider.interceptors.push('authInterceptor');
   })
 
 .run(function($ionicPlatform) {

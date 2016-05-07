@@ -1,21 +1,20 @@
 /*global Firebase, console, angular, navigator */
-angular.module('starter.services.camera', [])
+angular.module('one.services.camera', [])
+  .factory('Camera', ['$q', function ($q) {
+    'use strict';
 
-    .factory('Camera', ['$q', function ($q) {
-        'use strict';
+    return {
+      getPicture: function (options) {
+        var q = $q.defer();
 
-        return {
-            getPicture: function (options) {
-                var q = $q.defer();
+        navigator.camera.getPicture(function (result) {
+          // Do any magic you need
+          q.resolve(result);
+        }, function (err) {
+          q.reject(err);
+        }, options);
 
-                navigator.camera.getPicture(function (result) {
-                    // Do any magic you need
-                    q.resolve(result);
-                }, function (err) {
-                    q.reject(err);
-                }, options);
-
-                return q.promise;
-            }
-        };
-    }]);
+        return q.promise;
+      }
+    };
+  }]);
