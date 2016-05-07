@@ -7,16 +7,16 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
   'ionic',
-    'ngCordova',
-    'ngFileUpload',
-    'starter.controllers.account',
-    'starter.controllers.camera',
-    'starter.controllers.dashboard',
-    'starter.controllers.friends',
-    'starter.services.account',
-    'starter.services.camera',
-    'starter.services.dashboard',
-    'starter.services.friends'
+  'ngCordova',
+  'ngFileUpload',
+  'starter.controllers.account',
+  'starter.controllers.camera',
+  'starter.controllers.dashboard',
+  'starter.controllers.friends',
+  'starter.services.account',
+  'starter.services.camera',
+  'starter.services.dashboard',
+  'starter.services.friends'
 ])
 
   //.constant('API', 'http://onepi.cf/api')

@@ -23,4 +23,4 @@ android:
 
 android-run: android
 	adb install -r platforms/android/build/outputs/apk/android-debug.apk
-	adb shell am start -n com.ionicframework.starter/.MainActivity
+	adb shell am start -n com.one.one/.MainActivity
