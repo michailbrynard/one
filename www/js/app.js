@@ -7,7 +7,6 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
   'ionic',
-    'angularMoment',
     'ngCordova',
     'ngFileUpload',
     'starter.controllers.account',
