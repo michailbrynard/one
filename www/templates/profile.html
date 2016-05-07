@@ -1,12 +1,112 @@
 <ion-view view-title="Profile">
-    <ion-content class="padding">
-        <button ng-click="createSnorty()"
-                class="button button-full button-danger icon-left ion-compose">
-            Create New Snorty
-        </button>
-        <button ng-click="logOut(user)"
-                class="button button-full button-danger icon-left ion-person-add">
-            Logout
-        </button>
-    </ion-content>
+<ion-pane>
+
+    <fab-button target-id="scrollFabButtonTarget" ng-click="getPicture()">
+      <i class="icon ion ion-android-add"></i>
+    </fab-button>
+<ion-content scroll="true" class="my-background" id="scrollFabButtonTarget">
+<img src="img/camera.jpg" width="100%" height="100dp">
+  <h2 class="title my-top-bar">
+    <div class="row">
+      <div class="col col-33">
+        <button class="button button-clear" ng-click="switchToPhotos()">PHOTOS</button>
+      </div>
+      <div class="col col-33">
+        <button class="button button-clear" ng-click="switchToFollowers()">FOLLOWERS</button>
+      </div>
+      <div class="col col-33">
+        <button class="button button-clear" ng-click="switchToFollowing()">FOLLOWING</button>
+      </div>
+    </div>
+  </h2>
+  <div ng-show="data.photos">
+    <h2>This weeks photos...</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+    <h2>Last weeks photos...</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+    <h2>Last weeks photos...</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+    <h2>Last weeks photos...</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+    <h2>Last weeks photos...</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+    <h2>Last weeks photos...</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+    <h2>Last weeks photos...</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+    <h2>Last weeks photos...final</h2>
+    <div class="row">
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+      <div class="col"><img src="img/camera.jpg" width="100%"></div>
+    </div>
+  </div>
+  <div ng-show="data.followers">
+    <h2>My Followers</h2>
+  </div>
+  <div ng-show="data.following">
+    <h2>I am following</h2>
+  </div>
+  </ion-content>
+  </ion-pane>
 </ion-view>

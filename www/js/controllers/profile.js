@@ -49,7 +49,30 @@ angular.module('one.controllers.profile', [])
   })
 
   .controller('ProfileCtrl', function ($scope, $state, Auth, $ionicPopup, User) {
-    'use strict';
+
+    $scope.data = {
+      photos: true,
+      followers: false,
+      following: false
+    };
+
+    $scope.switchToPhotos = function() {
+      $scope.data.photos    = true;
+      $scope.data.followers = false;
+      $scope.data.following = false;
+    }
+    $scope.switchToFollowers = function() {
+      $scope.data.photos    = false;
+      $scope.data.followers = true;
+      $scope.data.following = false;
+    }
+    $scope.switchToFollowing = function() {
+      $scope.data.photos    = false;
+      $scope.data.followers = false;
+      $scope.data.following = true;
+    }
+
+
     $scope.logOut = function (user) {
       $ionicPopup.alert({title: 'Logging out, goodbye'});
       Auth.logout();

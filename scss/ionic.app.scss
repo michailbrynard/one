@@ -176,3 +176,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     -ms-flex-align: center;
     align-items: center;
 }
+
+.my-top-bar {
+  margin-top: 0px;
+  border-bottom: solid 4px $app_bar_color !important;
+}
+
+.scroll-big {
+  height: 100%;
+}
