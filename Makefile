@@ -27,3 +27,9 @@ android: run
 android-run: android
 	adb install -r platforms/android/build/outputs/apk/android-debug.apk
 	adb shell am start -n com.one.one/.MainActivity
+
+icons:
+	ionic resources --icon
+
+serve: run
+	ionic serve
