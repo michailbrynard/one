@@ -20,7 +20,7 @@ angular.module('one.services.camera', [])
   }])
 
   .service('CameraService', function($http, $ionicLoading, $cordovaFileTransfer, $cordovaCamera, Upload, User, Auth, API, $ionicPopup) {
-    self.takePicture = function() {
+    this.takePicture = function() {
       document.addEventListener("deviceready", function () {
         $ionicLoading.show({
           template: 'Checking...'

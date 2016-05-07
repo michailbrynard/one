@@ -1,5 +1,5 @@
 /*global angular, console, window, alert, ionic */
-angular.module('one.controllers.account', [])
+angular.module('one.controllers.profile', [])
   .controller('LoginCtrl', function ($scope, $ionicModal, $state, $ionicLoading, $rootScope, User, $ionicPopup) {
     //console.log('Login Controller Initialized');
     'use strict';
@@ -48,7 +48,7 @@ angular.module('one.controllers.account', [])
     };
   })
 
-  .controller('AccountViewCtrl', function ($scope, $state, Auth, $ionicPopup, User) {
+  .controller('ProfileCtrl', function ($scope, $state, Auth, $ionicPopup, User) {
     'use strict';
     $scope.logOut = function (user) {
       $ionicPopup.alert({title: 'Logging out, goodbye'});

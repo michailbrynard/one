@@ -5,12 +5,12 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('one', [
   'ionic',
+  'ion-fab-button',
   'ngCordova',
   'ngFileUpload',
-  'one.controllers.account',
+  'one.controllers.profile',
   'one.controllers.home',
-  'one.controllers.dashboard',
-  'one.controllers.friends',
+  'one.controllers.search',
   'one.services.account',
   'one.services.camera',
   'one.services.dashboard',
@@ -71,61 +71,38 @@ angular.module('one', [
                 cache: false
             })
 
-            .state('tab.camera', {
-                url: '/camera',
+            .state('tab.home', {
+                url: '/home',
                 views: {
-                    'tab-camera': {
-                        templateUrl: 'templates/camera.html',
-                        controller: 'CameraCtrl'
+                    'tab-home': {
+                        templateUrl: 'templates/home.html',
+                        controller: 'HomeCtrl'
                     }
                 }
             })
 
-            .state('tab.dashboard', {
-                url: '/dash',
+            .state('tab.search', {
+                url: '/search',
                 views: {
                     'tab-dash': {
-                        templateUrl: 'templates/dashboard.html',
-                        controller: 'MyPhotosCtrl'
+                        templateUrl: 'templates/search.html',
+                        controller: 'SearchCtrl'
                     }
                 }
             })
 
-            .state('tab.friend', {
-                url: '/friend',
+            .state('tab.profile', {
+                url: '/profile',
                 views: {
-                    'tab-friend': {
-                        templateUrl: 'templates/friend.html',
-                        controller: 'FriendListingCtrl'
-                    }
-                }
-            })
-
-            .state('tab.friendView', {
-                url: '/friend/view',
-                views: {
-                    'tab-friend': {
-                        templateUrl: 'templates/friend_view.html',
-                        controller: 'FriendViewCtrl'
-                    }
-                },
-                params: {
-                    friendId: null
-                }
-            })
-
-            .state('tab.account', {
-                url: '/account',
-                views: {
-                    'tab-account': {
-                        templateUrl: 'templates/account.html',
-                        controller: 'AccountViewCtrl'
+                    'tab-profile': {
+                        templateUrl: 'templates/profile.html',
+                        controller: 'ProfileCtrl'
                     }
                 }
             });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/camera');
+  $urlRouterProvider.otherwise('/tab/home');
 
 });
 
