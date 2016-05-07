@@ -9792,7 +9792,7 @@ a.button {
   transition-duration: 0s; }
 
 .fab-button {
-  background-color: #00474D;
+  background-color: #50E3C2;
   position: fixed;
   bottom: 50px;
   right: 20px;
@@ -9823,12 +9823,12 @@ a.button {
   color: #fff; }
 
 .my-background {
-  background-color: #faf;
+  background-color: #F1F1F1;
   color: #000; }
 
 .bar.bar-custom {
-  border-color: #afa;
-  background-color: #afa;
+  border-color: #333333;
+  background-color: #333333;
   /*background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);*/
   color: #fff; }
 
@@ -9840,7 +9840,7 @@ a.button {
 
 .bar-custom .button {
   border-color: transparent;
-  background-color: #afa;
+  background-color: #333333;
   color: #fff; }
 
 .bar-custom .button:hover {
@@ -9864,8 +9864,8 @@ a.button {
 
 .tabs-custom > .tabs,
 .tabs.tabs-custom {
-  border-color: #afa;
-  background-color: #afa;
+  border-color: #333333;
+  background-color: #333333;
   /*background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);*/
   color: #fff; }
 
@@ -9875,7 +9875,7 @@ a.button {
   color: #387ef5; }
 
 .tabs-striped.tabs-custom .tabs {
-  background-color: #afa; }
+  background-color: #333333; }
 
 .tabs-striped.tabs-custom .tab-item {
   color: rgba(255, 255, 255, 0.4);
