@@ -1,13 +1,57 @@
-<ion-view view-title="Camera">
-
+<ion-view view-title="Home">
   <ion-pane>
+
     <fab-button target-id="scrollFabButtonTarget" ng-click="getPicture()">
       <i class="icon ion ion-android-add"></i>
     </fab-button>
     <ion-content class="my-background" id="scrollFabButtonTarget">
-      <a ng-click="getPicture()">
+<!--       <a ng-click="getPicture()">
         <img src="img/camera.jpg" width="100%">
+      </a> -->
+
+  <h2 class="title my-top-bar">
+    <div class="row">
+      <div class="col col-50">
+        <button class="button button-clear segmentedbtn" ng-click="switchToMyfeed()">my feed</button>
+      </div>
+      <div class="col col-50">
+        <button class="button button-clear segmentedbtn" ng-click="switchToWorld()">the world</button>
+      </div>
+    </div>
+  </h2>
+
+  <div ng-show="data.myfeed">
+
+    <div class="list card">
+      <a class="item item-icon-left assertive item item-avatar" href="#">
+        <img src="img/helghardt.jpg">
+        <h3>Helghardt</h3>
+        <p>Today, 2pm</p>
       </a>
+      <div class="item item-image">
+        <img src="img/pic1.jpg">
+      </div>
+    </div>
+
+    <div class="list card">
+      <a class="item item-icon-left assertive item item-avatar" href="#">
+        <img src="img/helghardt.jpg">
+        <h3>Helghardt</h3>
+        <p>Yesterday, 1pm</p>
+      </a>
+      <div class="item item-image">
+        <img src="img/pic2.jpg">
+      </div>
+    </div>
+
+  </div>
+
+  <div ng-show="data.world">
+    <h1>sup</h1>
+  </div>
+
+  
+
     </ion-content>
     </ion-pane>
 </ion-view>
