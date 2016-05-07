@@ -15,6 +15,8 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+/*The path for our ionicons font files, relative to the built CSS in www/css*/
+/*Include all of Ionic*/
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9818,10 +9820,11 @@ a.button {
 
 .fab-button .icon {
   font-size: 24px;
-  color: #ffffff; }
+  color: #fff; }
 
 .my-background {
-  background-color: #faf; }
+  background-color: #faf;
+  color: #000; }
 
 .bar.bar-custom {
   border-color: #afa;

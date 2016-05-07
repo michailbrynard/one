@@ -15,8 +15,12 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-$app_background_color: #faf;
-$app_bar_color:        #afa;
+$app_background_color:            #faf;
+$app_background_text_color:       #000;
+$app_bar_color:                   #afa;
+$app_bar_text_color:              #fff;
+$app_fab_background_color:        #00474D;
+$app_fab_foreground_color:        #fff;
 
 
 /*The path for our ionicons font files, relative to the built CSS in www/css*/
@@ -26,7 +30,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 
 .fab-button {
-  background-color: #00474D;
+  background-color: $app_fab_background_color;
   position: fixed;
   bottom: 50px;
   right: 20px;
@@ -54,21 +58,22 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 .fab-button .icon {
   font-size: 24px;
-  color: #ffffff;
+  color: $app_fab_foreground_color;
 }
 
 .my-background {
   background-color: $app_background_color;
+  color: $app_background_text_color;
 }
 .bar.bar-custom {
     border-color: $app_bar_color;
     background-color: $app_bar_color;
     /*background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);*/
-    color: #fff;
+    color: $app_bar_text_color;
 }
 
 .bar.bar-custom .title {
-    color: #fff;
+    color: $app_bar_text_color;
 }
 
 .bar.bar-custom.bar-footer {
@@ -78,11 +83,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .bar-custom .button {
     border-color: transparent;
     background-color: $app_bar_color;
-    color: #fff;
+    color: $app_bar_text_color;
 }
 
 .bar-custom .button:hover {
-    color: #fff;
+    color: $app_bar_text_color;
     text-decoration: none;
 }
 
@@ -95,7 +100,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: #fff;
+    color: $app_bar_text_color;
     font-size: 17px;
 }
 
@@ -109,12 +114,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     border-color: $app_bar_color;
     background-color: $app_bar_color;
     /*background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);*/
-    color: #fff;
+    color: $app_bar_text_color;
 }
 
 .tabs-custom > .tabs .tab-item .badge,
 .tabs.tabs-custom .tab-item .badge {
-    background-color: #fff;
+    background-color: $app_bar_text_color;
     color: #387ef5;
 }
 
@@ -135,8 +140,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .tabs-striped.tabs-custom .tab-item.active,
 .tabs-striped.tabs-positive .tab-item.activated {
     margin-top: -2px;
-    color: #fff;
+    color: $app_bar_text_color;
     border-style: solid;
     border-width: 2px 0 0 0;
-    border-color: #fff;
+    border-color: $app_bar_text_color;
 }
